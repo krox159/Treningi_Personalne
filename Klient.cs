@@ -17,6 +17,6 @@
 
     public override string ToString()
     {
-        return $"ID: {Id}, Nazwa użytkownika: {NazwaUzytkownika}, Imię: {Imie}, Nazwisko: {Nazwisko}";
+        return $"{Id},{NazwaUzytkownika},{Imie},{Nazwisko},{Haslo}";
     }
 }

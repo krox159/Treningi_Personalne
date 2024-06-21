@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 
 namespace TreningiPersonalne
@@ -16,6 +17,8 @@ namespace TreningiPersonalne
             bazaDanych = new BazaDanych();
             while (true)
             {
+                WczytajBazeDanychKlientow();
+                WczytajBazeDanychTrenerow();
                 Console.Clear();
                 Console.WriteLine("Witaj w systemie treningów personalnych!");
                 Console.WriteLine("1. Logowanie jako menedżer");
@@ -182,6 +185,10 @@ namespace TreningiPersonalne
 
             var klient = new Klient(klientIdCounter++, nazwaUzytkownika, imie, nazwisko, haslo);
             bazaDanych.DodajKlienta(klient);
+            using (StreamWriter writetext = new StreamWriter("klienci.txt"))
+            {
+                writetext.WriteLine(klient);
+            }
             Console.Clear();
             Console.WriteLine("Zarejestrowano klienta.");
         }
@@ -317,6 +324,42 @@ namespace TreningiPersonalne
                 if (trening.KlientId == klient.Id)
                 {
                     Console.WriteLine(trening);
+                }
+
+            }
+        }
+        private static void WczytajBazeDanychKlientow()
+        {
+            using (StreamReader readtext = new StreamReader("klienci.txt"))
+            {
+                string readText = readtext.ReadLine();
+                var modelStrings = readText.Split('\n');
+                foreach (string s in modelStrings)
+                {
+                    var props = s.Split(',');
+                    if (!String.IsNullOrEmpty(s))
+                    {
+                        Klient klient = new Klient(Convert.ToInt32(props[0]), props[1], props[2], props[3], props[4]);
+                        bazaDanych.DodajKlienta(klient);
+                    }
+                }
+            }
+        }
+
+        private static void WczytajBazeDanychTrenerow()
+        {
+            using (StreamReader readtext = new StreamReader("trenerzy.txt"))
+            {
+                string readText = readtext.ReadLine();
+                var modelStrings = readText.Split('\n');
+                foreach (string s in modelStrings)
+                {
+                    var props = s.Split(',');
+                    if (!String.IsNullOrEmpty(s))
+                    {
+                        Trener trener = new Trener(Convert.ToInt32(props[0]), props[1], props[2]);
+                        bazaDanych.DodajTrenera(trener);
+                    }
                 }
             }
         }

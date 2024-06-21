@@ -17,7 +17,7 @@ namespace TreningiPersonalne
 
         public override string ToString()
         {
-            return $"{Id}: {Imie} {Nazwisko}";
+            return $"{Id},{Imie},{Nazwisko}";
         }
     }
 }
