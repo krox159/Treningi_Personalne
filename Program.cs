@@ -1,99 +1,325 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace TreningPersonalny
+
+namespace TreningiPersonalne
 {
-    class Trener
-    {
-        public string Imie { get; set; }
-        public string Specjalizacja { get; set; }
-
-        public Trener(string imie, string specjalizacja)
-        {
-            Imie = imie;
-            Specjalizacja = specjalizacja;
-        }
-    }
-
-    class Trening
-    {
-        public DateTime Data {  get; set; }
-        public Trener Trener { get; set; }
-
-        public Trening (DateTime data, Trener trener)
-        {
-            Data = data;
-            Trener = trener;
-        }
-    }
     class Program
     {
-        static List<Trening> listaTreningow=new List<Trening> ();
-
-        public static void WyswietlTrenerow()
-        {
-            Console.WriteLine("Nasi trenerzy:");
-            Console.WriteLine("1) Andrzej Popiełuszko - trening siłowy");
-            Console.WriteLine("2) Gienia Nowak - trenining funkcjonalny");
-            Console.WriteLine("3) Marcin Pośpiech - stretching");
-        }
-
-        public static void ZapiszNaTrening(DateTime data, Trener trener)
-        {
-            listaTreningow.Add(new Trening(data, trener));
-            Console.WriteLine("Zapisano na trening z trenerem " + trener.Imie + " na " + data.ToShortDateString());
-        }
+        private static BazaDanych bazaDanych;
+        private static int klientIdCounter = 1;
+        private static int trenerIdCounter = 1;
+        private static int treningIdCounter = 1;
+        private const string MenedzerHaslo = "123";
 
         static void Main(string[] args)
         {
-            bool zakoncz = false;
-
-            while (!zakoncz)
+            bazaDanych = new BazaDanych();
+            while (true)
             {
-                
-                Console.WriteLine("TWÓJ TRENING PERSONALNY!");
-                Console.WriteLine("Wybierz opcję:");
-                Console.WriteLine("1. Poznaj naszych trenerów.");
-                Console.WriteLine("2. Zapisz się na trening.");
-                Console.WriteLine("3. Wyjdź z aplikacji.");
+                Console.Clear();
+                Console.WriteLine("Witaj w systemie treningów personalnych!");
+                Console.WriteLine("1. Logowanie jako menedżer");
+                Console.WriteLine("2. Rejestracja klienta");
+                Console.WriteLine("3. Logowanie jako klient");
+                Console.WriteLine("4. Wyjście");
 
-                string opcja = Console.ReadLine();
-                switch (opcja)
+                var wybor = Console.ReadLine();
+                Console.Clear();
+                switch (wybor)
                 {
-                    case "1": WyswietlTrenerow(); break;
+                    case "1":
+                        LogowanieMenedzera();
+                        break;
                     case "2":
-                         Console.WriteLine("Podaj datę treningu (RRRR-MM-DD):");
-                        if (DateTime.TryParse(Console.ReadLine(), out DateTime dataTreningu))
+                        RejestracjaKlienta();
+                        break;
+                    case "3":
+                        LogowanieKlienta();
+                        break;
+                    case "4":
+                        return;
+                    default:
+                        Console.WriteLine("Nieprawidłowy wybór, spróbuj ponownie.");
+                        break;
+                }
+            }
+        }
+
+        private static void LogowanieMenedzera()
+        {
+            Console.Write("Podaj hasło: ");
+            var haslo = Console.ReadLine();
+            Console.Clear();
+            if (haslo == MenedzerHaslo)
+            {
+                PanelMenedzera();
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowe hasło.");
+            }
+        }
+
+        private static void PanelMenedzera()
+        {
+            while (true)
+            {
+                Console.WriteLine("Panel menedżera:");
+                Console.WriteLine("1. Dodaj trenera");
+                Console.WriteLine("2. Usuń trenera");
+                Console.WriteLine("3. Wyświetl listę trenerów");
+                Console.WriteLine("4. Wyświetl listę treningów");
+                Console.WriteLine("5. Anuluj trening");
+                Console.WriteLine("6. Wyloguj");
+
+                var wybor = Console.ReadLine();
+                Console.Clear();
+                switch (wybor)
+                {
+                    case "1":
+                        DodajTrenera();
+                        break;
+                    case "2":
+                        UsunTrenera();
+                        break;
+                    case "3":
+                        WyswietlListeTrenerow();
+                        break;
+                    case "4":
+                        WyswietlListeTreningow();
+                        break;
+                    case "5":
+                        AnulujTreningMenedzer();
+                        break;
+                    case "6":
+                        return;
+                    default:
+                        Console.WriteLine("Nieprawidłowy wybór, spróbuj ponownie.");
+                        break;
+                }
+            }
+        }
+
+        private static void DodajTrenera()
+        {
+            Console.Write("Podaj imię trenera: ");
+            var imie = Console.ReadLine();
+            Console.Write("Podaj nazwisko trenera: ");
+            var nazwisko = Console.ReadLine();
+
+            var trener = new Trener(trenerIdCounter++, imie, nazwisko);
+            bazaDanych.DodajTrenera(trener);
+            Console.Clear();
+            Console.WriteLine("Dodano trenera.");
+        }
+
+        private static void UsunTrenera()
+        {
+            Console.Write("Podaj ID trenera do usunięcia: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
+            {
+                bazaDanych.UsunTrenera(id);
+                Console.Clear();
+                Console.WriteLine("Usunięto trenera.");
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowe ID.");
+            }
+        }
+
+        private static void WyswietlListeTrenerow()
+        {
+            Console.WriteLine("Lista trenerów:");
+            foreach (var trener in bazaDanych.Trenerzy)
+            {
+                Console.WriteLine(trener);
+            }
+        }
+
+        private static void WyswietlListeTreningow()
+        {
+            Console.WriteLine("Lista treningów:");
+            foreach (var trening in bazaDanych.Treningi)
+            {
+                Console.WriteLine(trening);
+            }
+        }
+
+        private static void AnulujTreningMenedzer()
+        {
+            WyswietlListeTreningow();
+            Console.Write("Podaj ID treningu do anulowania: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
+            {
+                bazaDanych.UsunTrening(id);
+                Console.Clear();
+                Console.WriteLine("Anulowano trening.");
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowe ID.");
+            }
+        }
+
+        private static void RejestracjaKlienta()
+        {
+            Console.Write("Podaj unikalną nazwę użytkownika: ");
+            var nazwaUzytkownika = Console.ReadLine();
+
+            if (bazaDanych.Klienci.Exists(k => k.NazwaUzytkownika == nazwaUzytkownika))
+            {
+                Console.WriteLine("Nazwa użytkownika już istnieje. Spróbuj ponownie.");
+                return;
+            }
+
+            Console.Write("Podaj imię: ");
+            var imie = Console.ReadLine();
+            Console.Write("Podaj nazwisko: ");
+            var nazwisko = Console.ReadLine();
+            Console.Write("Podaj hasło: ");
+            var haslo = Console.ReadLine();
+
+            var klient = new Klient(klientIdCounter++, nazwaUzytkownika, imie, nazwisko, haslo);
+            bazaDanych.DodajKlienta(klient);
+            Console.Clear();
+            Console.WriteLine("Zarejestrowano klienta.");
+        }
+
+        private static void LogowanieKlienta()
+        {
+            Console.Write("Podaj nazwę użytkownika: ");
+            var nazwaUzytkownika = Console.ReadLine();
+
+            var klient = bazaDanych.Klienci.Find(k => k.NazwaUzytkownika == nazwaUzytkownika);
+            if (klient != null)
+            {
+                Console.Write("Podaj hasło: ");
+                var haslo = Console.ReadLine();
+                Console.Clear();
+                if (klient.Haslo == haslo)
+                {
+                    PanelKlienta(klient);
+                }
+                else
+                {
+                    Console.WriteLine("Nieprawidłowe hasło.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nie znaleziono klienta o podanej nazwie użytkownika.");
+            }
+        }
+
+        private static void PanelKlienta(Klient klient)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Panel klienta: {klient.Imie} {klient.Nazwisko}");
+                Console.WriteLine("1. Zapisz się na trening");
+                Console.WriteLine("2. Odwołaj trening");
+                Console.WriteLine("3. Wyświetl swoje rezerwacje");
+                Console.WriteLine("4. Wyloguj");
+
+                var wybor = Console.ReadLine();
+                Console.Clear();
+                switch (wybor)
+                {
+                    case "1":
+                        ZapiszNaTrening(klient);
+                        break;
+                    case "2":
+                        OdwolajTrening(klient);
+                        break;
+                    case "3":
+                        WyswietlRezerwacjeKlienta(klient);
+                        break;
+                    case "4":
+                        return;
+                    default:
+                        Console.WriteLine("Nieprawidłowy wybór, spróbuj ponownie.");
+                        break;
+                }
+            }
+        }
+
+        private static void ZapiszNaTrening(Klient klient)
+        {
+            WyswietlListeTrenerow();
+            Console.Write("Podaj ID trenera: ");
+            if (int.TryParse(Console.ReadLine(), out int trenerId) && bazaDanych.Trenerzy.Exists(t => t.Id == trenerId))
+            {
+                Console.Write("Podaj datę (yyyy-mm-dd): ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime data))
+                {
+                    Console.Write("Podaj godzinę (hh:mm): ");
+                    if (TimeSpan.TryParse(Console.ReadLine(), out TimeSpan godzina))
+                    {
+                        Console.Write("Podaj czas trwania (hh:mm): ");
+                        if (TimeSpan.TryParse(Console.ReadLine(), out TimeSpan czasTrwania))
                         {
-                            Console.WriteLine("Wybierz trenera (wskaż numer):");
-                            WyswietlTrenerow();
-                            int numerTrenera=int.Parse(Console.ReadLine());
-                            Trener trener=null;
-                            switch (numerTrenera)
-                            {
-                                case 1: trener = new Trener("Andrzej Popiełuszko", "Trening siłowy"); break;
-                                case 2: trener = new Trener("Gienia Nowak", "Trenining funkcjonalny"); break;
-                                case 3: trener = new Trener("Marcin Pośpiech", "Stretching"); break;
-                                default:
-                                    Console.WriteLine("Nieprawidłowy numer trenera.");
-                                    break;
-                            }
-                            if (trener != null)
-                                ZapiszNaTrening(dataTreningu, trener);
+                            var trening = new Trening(treningIdCounter++, klient.Id, trenerId, data + godzina, czasTrwania);
+                            bazaDanych.DodajTrening(trening);
+                            Console.Clear();
+                            Console.WriteLine("Zarezerwowano trening.");
                         }
                         else
                         {
-                            Console.WriteLine("Nieprawidłowy format daty.");
+                            Console.WriteLine("Nieprawidłowy czas trwania.");
                         }
-                        break;
-                    case "3":
-                        zakoncz = true;
-                        break;
-                    default:
-                        Console.WriteLine("Nieprawidłowa opcja.");
-                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nieprawidłowa godzina.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nieprawidłowa data.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nie znaleziono trenera o podanym ID.");
+            }
+        }
+
+        private static void OdwolajTrening(Klient klient)
+        {
+            WyswietlRezerwacjeKlienta(klient);
+            Console.Write("Podaj ID treningu do odwołania: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
+            {
+                var trening = bazaDanych.Treningi.Find(t => t.Id == id && t.KlientId == klient.Id);
+                if (trening != null)
+                {
+                    bazaDanych.UsunTrening(id);
+                    Console.Clear();
+                    Console.WriteLine("Odwołano trening.");
+                }
+                else
+                {
+                    Console.WriteLine("Nie znaleziono treningu o podanym ID.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowe ID.");
+            }
+        }
+
+        private static void WyswietlRezerwacjeKlienta(Klient klient)
+        {
+            Console.WriteLine("Twoje rezerwacje:");
+            foreach (var trening in bazaDanych.Treningi)
+            {
+                if (trening.KlientId == klient.Id)
+                {
+                    Console.WriteLine(trening);
                 }
             }
         }
     }
 }
+
