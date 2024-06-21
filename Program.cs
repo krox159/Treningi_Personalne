@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Reflection;
 
 
@@ -7,9 +8,9 @@ namespace TreningiPersonalne
     class Program
     {
         private static BazaDanych bazaDanych;
-        private static int klientIdCounter = 1;
-        private static int trenerIdCounter = 1;
-        private static int treningIdCounter = 1;
+        private static int klientIdCounter = 0;
+        private static int trenerIdCounter = 0;
+        private static int treningIdCounter = 0;
         private const string MenedzerHaslo = "123";
 
         static void Main(string[] args)
@@ -133,6 +134,7 @@ namespace TreningiPersonalne
             if (int.TryParse(Console.ReadLine(), out int id))
             {
                 bazaDanych.UsunTrenera(id);
+                AktualizujBazeTrenerow();
                 Console.Clear();
                 Console.WriteLine("Usunięto trenera.");
             }
@@ -167,6 +169,7 @@ namespace TreningiPersonalne
             if (int.TryParse(Console.ReadLine(), out int id))
             {
                 bazaDanych.UsunTrening(id);
+                AktualizujBazeTreningow();
                 Console.Clear();
                 Console.WriteLine("Anulowano trening.");
             }
@@ -194,7 +197,8 @@ namespace TreningiPersonalne
             Console.Write("Podaj hasło: ");
             var haslo = Console.ReadLine();
 
-            var klient = new Klient(klientIdCounter++, nazwaUzytkownika, imie, nazwisko, haslo);
+            klientIdCounter++;
+            var klient = new Klient(klientIdCounter, nazwaUzytkownika, imie, nazwisko, haslo);
             bazaDanych.DodajKlienta(klient);
             using (StreamWriter writetext = File.AppendText("klienci.txt"))
             {
@@ -277,7 +281,8 @@ namespace TreningiPersonalne
                         Console.Write("Podaj czas trwania (hh:mm): ");
                         if (TimeSpan.TryParse(Console.ReadLine(), out TimeSpan czasTrwania))
                         {
-                            var trening = new Trening(treningIdCounter++, klient.Id, trenerId, data + godzina, czasTrwania);
+                            treningIdCounter++;
+                            var trening = new Trening(treningIdCounter, klient.Id, trenerId, data + godzina, czasTrwania);
                             bazaDanych.DodajTrening(trening);
                             using (StreamWriter writetext = File.AppendText("treningi.txt"))
                             {
@@ -317,6 +322,7 @@ namespace TreningiPersonalne
                 if (trening != null)
                 {
                     bazaDanych.UsunTrening(id);
+                    AktualizujBazeTreningow();
                     Console.Clear();
                     Console.WriteLine("Odwołano trening.");
                 }
@@ -348,7 +354,7 @@ namespace TreningiPersonalne
             using (StreamReader readtext = new StreamReader("klienci.txt"))
             {
                 string readText = readtext.ReadToEnd();
-                var modelStrings = readText.Split(new string[] { Environment.NewLine },StringSplitOptions.None);
+                var modelStrings = readText.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 foreach (string s in modelStrings)
                 {
                     var props = s.Split(',');
@@ -366,7 +372,7 @@ namespace TreningiPersonalne
             using (StreamReader readtext = new StreamReader("trenerzy.txt"))
             {
                 string readText = readtext.ReadToEnd();
-                var modelStrings = readText.Split('\n');
+                var modelStrings = readText.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 foreach (string s in modelStrings)
                 {
                     var props = s.Split(',');
@@ -384,13 +390,13 @@ namespace TreningiPersonalne
             using (StreamReader readtext = new StreamReader("treningi.txt"))
             {
                 string readText = readtext.ReadToEnd();
-                var modelStrings = readText.Split('\n');
+                var modelStrings = readText.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 foreach (string s in modelStrings)
                 {
                     var props = s.Split(',');
                     if (!String.IsNullOrEmpty(s))
                     {
-                        Trening trening = new Trening(Convert.ToInt32(props[0]), Convert.ToInt32(props[1]), Convert.ToInt32(props[2]),Convert.ToDateTime(props[3]), TimeSpan.Parse(props[4]));
+                        Trening trening = new Trening(Convert.ToInt32(props[0]), Convert.ToInt32(props[1]), Convert.ToInt32(props[2]), Convert.ToDateTime(props[3]), TimeSpan.Parse(props[4]));
                         bazaDanych.DodajTrening(trening);
                     }
                 }
@@ -398,7 +404,9 @@ namespace TreningiPersonalne
         }
         private static void ZnajdzNajwyzszeIdTrenera()
         {
-            int? maxDBId = bazaDanych.Trenerzy.AsEnumerable().Max(t => t.Id);
+            int? maxDBId = null;
+            if (bazaDanych.Trenerzy.AsEnumerable().Any())
+                maxDBId = bazaDanych.Trenerzy.AsEnumerable().Max(t => t.Id);
             if (maxDBId != null)
             {
                 trenerIdCounter = (int)maxDBId;
@@ -407,7 +415,9 @@ namespace TreningiPersonalne
 
         private static void ZnajdzNajwyzszeIdKlienta()
         {
-            int? maxDBId = bazaDanych.Klienci.AsEnumerable().Max(t => t.Id);
+            int? maxDBId = null;
+            if (bazaDanych.Klienci.AsEnumerable().Any())
+                maxDBId = bazaDanych.Klienci.AsEnumerable().Max(t => t.Id);
             if (maxDBId != null)
             {
                 klientIdCounter = (int)maxDBId;
@@ -416,11 +426,39 @@ namespace TreningiPersonalne
 
         private static void ZnajdzNajwyzszeIdTreningu()
         {
-            int? maxDBId = bazaDanych.Treningi.AsEnumerable().Max(t => t.Id);
+            int? maxDBId = null;
+            if (bazaDanych.Treningi.AsEnumerable().Any())
+                maxDBId = bazaDanych.Treningi.AsEnumerable().Max(t => t.Id);
             if (maxDBId != null)
             {
                 treningIdCounter = (int)maxDBId;
             }
+        }
+
+        private static void AktualizujBazeTrenerow()
+        {
+            File.WriteAllText("trenerzy.txt", string.Empty);
+            foreach (var trener in bazaDanych.Trenerzy)
+            {
+                using (StreamWriter writetext = File.AppendText("trenerzy.txt"))
+                {
+                    writetext.WriteLine(trener);
+                }
+            }
+           
+        }
+
+        private static void AktualizujBazeTreningow()
+        {
+            File.WriteAllText("treningi.txt", string.Empty);
+            foreach (var trening in bazaDanych.Treningi)
+            {
+                using (StreamWriter writetext = File.AppendText("treningi.txt"))
+                {
+                    writetext.WriteLine(trening);
+                }
+            }
+
         }
     }
 }
