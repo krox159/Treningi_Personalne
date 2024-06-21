@@ -112,6 +112,10 @@ namespace TreningiPersonalne
 
             var trener = new Trener(trenerIdCounter++, imie, nazwisko);
             bazaDanych.DodajTrenera(trener);
+            using (StreamWriter writetext = new StreamWriter("trenerzy.txt"))
+            {
+                writetext.WriteLine(trener);
+            }
             Console.Clear();
             Console.WriteLine("Dodano trenera.");
         }
