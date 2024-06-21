@@ -19,6 +19,7 @@ namespace TreningiPersonalne
             {
                 WczytajBazeDanychKlientow();
                 WczytajBazeDanychTrenerow();
+                WczytajBazeDanychTreningi();
                 Console.Clear();
                 Console.WriteLine("Witaj w systemie treningów personalnych!");
                 Console.WriteLine("1. Logowanie jako menedżer");
@@ -112,7 +113,7 @@ namespace TreningiPersonalne
 
             var trener = new Trener(trenerIdCounter++, imie, nazwisko);
             bazaDanych.DodajTrenera(trener);
-            using (StreamWriter writetext = new StreamWriter("trenerzy.txt"))
+            using (StreamWriter writetext = File.AppendText("trenerzy.txt"))
             {
                 writetext.WriteLine(trener);
             }
@@ -189,7 +190,7 @@ namespace TreningiPersonalne
 
             var klient = new Klient(klientIdCounter++, nazwaUzytkownika, imie, nazwisko, haslo);
             bazaDanych.DodajKlienta(klient);
-            using (StreamWriter writetext = new StreamWriter("klienci.txt"))
+            using (StreamWriter writetext = File.AppendText("klienci.txt"))
             {
                 writetext.WriteLine(klient);
             }
@@ -272,6 +273,10 @@ namespace TreningiPersonalne
                         {
                             var trening = new Trening(treningIdCounter++, klient.Id, trenerId, data + godzina, czasTrwania);
                             bazaDanych.DodajTrening(trening);
+                            using (StreamWriter writetext = File.AppendText("treningi.txt"))
+                            {
+                                writetext.WriteLine(trening);
+                            }
                             Console.Clear();
                             Console.WriteLine("Zarezerwowano trening.");
                         }
@@ -336,8 +341,8 @@ namespace TreningiPersonalne
         {
             using (StreamReader readtext = new StreamReader("klienci.txt"))
             {
-                string readText = readtext.ReadLine();
-                var modelStrings = readText.Split('\n');
+                string readText = readtext.ReadToEnd();
+                var modelStrings = readText.Split(new string[] { Environment.NewLine },StringSplitOptions.None);
                 foreach (string s in modelStrings)
                 {
                     var props = s.Split(',');
@@ -354,7 +359,7 @@ namespace TreningiPersonalne
         {
             using (StreamReader readtext = new StreamReader("trenerzy.txt"))
             {
-                string readText = readtext.ReadLine();
+                string readText = readtext.ReadToEnd();
                 var modelStrings = readText.Split('\n');
                 foreach (string s in modelStrings)
                 {
@@ -363,6 +368,24 @@ namespace TreningiPersonalne
                     {
                         Trener trener = new Trener(Convert.ToInt32(props[0]), props[1], props[2]);
                         bazaDanych.DodajTrenera(trener);
+                    }
+                }
+            }
+        }
+
+        private static void WczytajBazeDanychTreningi()
+        {
+            using (StreamReader readtext = new StreamReader("treningi.txt"))
+            {
+                string readText = readtext.ReadToEnd();
+                var modelStrings = readText.Split('\n');
+                foreach (string s in modelStrings)
+                {
+                    var props = s.Split(',');
+                    if (!String.IsNullOrEmpty(s))
+                    {
+                        Trening trening = new Trening(Convert.ToInt32(props[0]), Convert.ToInt32(props[1]), Convert.ToInt32(props[2]),Convert.ToDateTime(props[3]), TimeSpan.Parse(props[4]));
+                        bazaDanych.DodajTrening(trening);
                     }
                 }
             }

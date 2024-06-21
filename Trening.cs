@@ -21,7 +21,7 @@ namespace TreningiPersonalne
 
         public override string ToString()
         {
-            return $"{Id}: Klient {KlientId}, Trener {TrenerId}, Data: {Data}, Czas trwania: {CzasTrwania}";
+            return $"{Id},{KlientId},{TrenerId},{Data},{CzasTrwania}";
         }
     }
 }
