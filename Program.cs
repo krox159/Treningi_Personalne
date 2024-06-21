@@ -20,6 +20,11 @@ namespace TreningiPersonalne
                 WczytajBazeDanychKlientow();
                 WczytajBazeDanychTrenerow();
                 WczytajBazeDanychTreningi();
+
+                ZnajdzNajwyzszeIdKlienta();
+                ZnajdzNajwyzszeIdTrenera();
+                ZnajdzNajwyzszeIdTreningu();
+
                 Console.Clear();
                 Console.WriteLine("Witaj w systemie treningów personalnych!");
                 Console.WriteLine("1. Logowanie jako menedżer");
@@ -111,7 +116,8 @@ namespace TreningiPersonalne
             Console.Write("Podaj nazwisko trenera: ");
             var nazwisko = Console.ReadLine();
 
-            var trener = new Trener(trenerIdCounter++, imie, nazwisko);
+            trenerIdCounter++;
+            var trener = new Trener(trenerIdCounter, imie, nazwisko);
             bazaDanych.DodajTrenera(trener);
             using (StreamWriter writetext = File.AppendText("trenerzy.txt"))
             {
@@ -388,6 +394,32 @@ namespace TreningiPersonalne
                         bazaDanych.DodajTrening(trening);
                     }
                 }
+            }
+        }
+        private static void ZnajdzNajwyzszeIdTrenera()
+        {
+            int? maxDBId = bazaDanych.Trenerzy.AsEnumerable().Max(t => t.Id);
+            if (maxDBId != null)
+            {
+                trenerIdCounter = (int)maxDBId;
+            }
+        }
+
+        private static void ZnajdzNajwyzszeIdKlienta()
+        {
+            int? maxDBId = bazaDanych.Klienci.AsEnumerable().Max(t => t.Id);
+            if (maxDBId != null)
+            {
+                klientIdCounter = (int)maxDBId;
+            }
+        }
+
+        private static void ZnajdzNajwyzszeIdTreningu()
+        {
+            int? maxDBId = bazaDanych.Treningi.AsEnumerable().Max(t => t.Id);
+            if (maxDBId != null)
+            {
+                treningIdCounter = (int)maxDBId;
             }
         }
     }
