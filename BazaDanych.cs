@@ -13,17 +13,20 @@ namespace TreningiPersonalne
 
         public void DodajKlienta(Klient klient)
         {
-            Klienci.Add(klient);
+            if (!Klienci.AsEnumerable().Any(k=>k.Id==klient.Id))
+                Klienci.Add(klient);
         }
 
         public void DodajTrenera(Trener trener)
         {
-            Trenerzy.Add(trener);
+            if (!Trenerzy.AsEnumerable().Any(k => k.Id == trener.Id))
+                Trenerzy.Add(trener);
         }
 
         public void DodajTrening(Trening trening)
         {
-            Treningi.Add(trening);
+            if (!Treningi.AsEnumerable().Any(k => k.Id == trening.Id))
+                Treningi.Add(trening);
         }
 
         public void UsunTrenera(int id)
