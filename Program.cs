@@ -130,6 +130,7 @@ namespace TreningiPersonalne
 
         private static void UsunTrenera()
         {
+            WyswietlListeTrenerow();
             Console.Write("Podaj ID trenera do usunięcia: ");
             if (int.TryParse(Console.ReadLine(), out int id))
             {
@@ -272,6 +273,7 @@ namespace TreningiPersonalne
             Console.Write("Podaj ID trenera: ");
             if (int.TryParse(Console.ReadLine(), out int trenerId) && bazaDanych.Trenerzy.Exists(t => t.Id == trenerId))
             {
+                var trener = bazaDanych.Trenerzy.Find(t => t.Id == trenerId);
                 Console.Write("Podaj datę (yyyy-mm-dd): ");
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime data))
                 {
@@ -282,7 +284,7 @@ namespace TreningiPersonalne
                         if (TimeSpan.TryParse(Console.ReadLine(), out TimeSpan czasTrwania))
                         {
                             treningIdCounter++;
-                            var trening = new Trening(treningIdCounter, klient.Id, trenerId, data + godzina, czasTrwania);
+                            var trening = new Trening(treningIdCounter, klient.Id, trenerId, data + godzina, czasTrwania, $"{klient.Imie} {klient.Nazwisko}", $"{trener.Imie} {trener.Nazwisko}");
                             bazaDanych.DodajTrening(trening);
                             using (StreamWriter writetext = File.AppendText("treningi.txt"))
                             {
@@ -311,6 +313,7 @@ namespace TreningiPersonalne
                 Console.WriteLine("Nie znaleziono trenera o podanym ID.");
             }
         }
+
 
         private static void OdwolajTrening(Klient klient)
         {
@@ -396,12 +399,22 @@ namespace TreningiPersonalne
                     var props = s.Split(',');
                     if (!String.IsNullOrEmpty(s))
                     {
-                        Trening trening = new Trening(Convert.ToInt32(props[0]), Convert.ToInt32(props[1]), Convert.ToInt32(props[2]), Convert.ToDateTime(props[3]), TimeSpan.Parse(props[4]));
+                        int id = Convert.ToInt32(props[0]);
+                        int klientId = Convert.ToInt32(props[1]);
+                        int trenerId = Convert.ToInt32(props[2]);
+                        DateTime dataGodzina = Convert.ToDateTime(props[3]);
+                        TimeSpan czasTrwania = TimeSpan.Parse(props[4]);
+                        string klientImieNazwisko = props[5];
+                        string trenerImieNazwisko = props[6];
+
+                        Trening trening = new Trening(id, klientId, trenerId, dataGodzina, czasTrwania, klientImieNazwisko, trenerImieNazwisko);
                         bazaDanych.DodajTrening(trening);
                     }
                 }
             }
         }
+
+
         private static void ZnajdzNajwyzszeIdTrenera()
         {
             int? maxDBId = null;
@@ -445,7 +458,7 @@ namespace TreningiPersonalne
                     writetext.WriteLine(trener);
                 }
             }
-           
+
         }
 
         private static void AktualizujBazeTreningow()
