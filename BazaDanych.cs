@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TreningiPersonalne
 {
@@ -11,9 +12,11 @@ namespace TreningiPersonalne
         public List<Trener> Trenerzy { get; } = new List<Trener>();
         public List<Trening> Treningi { get; } = new List<Trening>();
 
+        public List<Warsztaty> Warsztaty { get; } = new List<Warsztaty>();
+
         public void DodajKlienta(Klient klient)
         {
-            if (!Klienci.AsEnumerable().Any(k=>k.Id==klient.Id))
+            if (!Klienci.AsEnumerable().Any(k => k.Id == klient.Id))
                 Klienci.Add(klient);
         }
 
@@ -38,5 +41,6 @@ namespace TreningiPersonalne
         {
             Treningi.RemoveAll(t => t.Id == id);
         }
+
     }
 }

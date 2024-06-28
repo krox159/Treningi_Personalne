@@ -1,13 +1,7 @@
-﻿using System;
-
-namespace TreningiPersonalne
+﻿namespace TreningiPersonalne
 {
-    public class Trener
+    public class Trener : Uzytkownik
     {
-        public int Id { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
-
         public Trener(int id, string imie, string nazwisko)
         {
             Id = id;

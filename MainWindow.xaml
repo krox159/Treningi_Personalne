@@ -1,0 +1,16 @@
+﻿<Window x:Class="TreningiPersonalne.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreningiPersonalne"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Logowanie Managera" HorizontalAlignment="Left" Margin="53,100,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ManagerLoginClick"/>
+        <Button Content="Rejestracja Klienta" HorizontalAlignment="Left" Margin="53,182,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ClientRegistration" RenderTransformOrigin="0.517,-0.406"/>
+        <Button Content="Logowanie Klienta" HorizontalAlignment="Left" Margin="53,265,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ClientLogin"/>
+        <Button Content="Wyjście" HorizontalAlignment="Left" Margin="53,373,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ExitButton"/>
+
+    </Grid>
+</Window>

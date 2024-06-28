@@ -1,0 +1,15 @@
+﻿<Window x:Class="TreningiPersonalne.ShowTrainings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreningiPersonalne"
+        mc:Ignorable="d"
+        Title="ShowTrainings" Height="450" Width="800">
+    <Grid>
+        <DataGrid Margin="0,10,0,-10" Name="TrainingsDataGrid" ItemsSource="{Binding Source=trainingsList}">
+
+        </DataGrid>
+
+    </Grid>
+</Window>

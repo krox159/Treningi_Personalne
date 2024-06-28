@@ -1,0 +1,20 @@
+﻿<Window x:Class="TreningiPersonalne.ClientRegistrationForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreningiPersonalne"
+        mc:Ignorable="d"
+        Title="ClientRegistrationForm" Height="450" Width="800">
+    <Grid>
+        <Label Content="Unikalna Nazwa Użytkownika" HorizontalAlignment="Left" Margin="52,96,0,0" VerticalAlignment="Top" Height="41" Width="176"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="52,161,0,0" VerticalAlignment="Top" Height="41" Width="176"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="52,233,0,0" VerticalAlignment="Top" Height="41" Width="176"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="52,304,0,0" VerticalAlignment="Top" Height="41" Width="176"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,96,0,0" TextWrapping="Wrap" Text="Nazwa Użytkownika" VerticalAlignment="Top" Width="176" Height="41" Name="UserLogin" KeyDown="UserPassword_KeyDown"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top" Width="176" Height="41" Name="UserName" KeyDown="UserPassword_KeyDown"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,233,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="176" Height="41" Name="UserSurname" KeyDown="UserPassword_KeyDown"/>
+        <PasswordBox HorizontalAlignment="Center" Margin="0,304,0,0" VerticalAlignment="Top" Width="176" Height="41" Password="Hasło" Name="UserPassword" KeyDown="UserPassword_KeyDown"/>
+
+    </Grid>
+</Window>

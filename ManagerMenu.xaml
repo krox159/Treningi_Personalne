@@ -1,0 +1,20 @@
+﻿<Window x:Class="TreningiPersonalne.ManagerMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreningiPersonalne"
+        mc:Ignorable="d"
+        Title="ManagerMenu" Height="450" Width="800">
+    <Grid>
+        <Label Content="Manager Menu" HorizontalAlignment="Left" Margin="302,162,0,0" VerticalAlignment="Top" Height="44" Width="158"/>
+        <Button Content="Dodaj Trenera" HorizontalAlignment="Left" Margin="52,45,0,0" VerticalAlignment="Top" Height="38" Width="138" Click="AddTrainer"/>
+        <Button Content="Usuń Trenera" HorizontalAlignment="Left" Margin="52,107,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="DeleteTrainer"/>
+        <Button Content="Wyświetl Listę Trenerów" HorizontalAlignment="Left" Margin="52,168,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="ShowTrainers"/>
+        <Button Content="Wyświetl Listę Treningów" HorizontalAlignment="Left" Margin="52,229,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="ShowTrainings"/>
+        <Button Content="Anuluj Trening" HorizontalAlignment="Left" Margin="52,290,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="DeleteTraining"/>
+        <Button Content="Wyloguj" HorizontalAlignment="Left" Margin="52,351,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="ManagerLogout"/>
+        <Button Content="Dodaj Warsztaty" HorizontalAlignment="Left" Margin="597,45,0,0" VerticalAlignment="Top" Height="38" Width="138" Click="AddWorkshop"/>
+
+    </Grid>
+</Window>

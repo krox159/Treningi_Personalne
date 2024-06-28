@@ -1,0 +1,16 @@
+﻿<Window x:Class="TreningiPersonalne.ClientLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreningiPersonalne"
+        mc:Ignorable="d"
+        Title="ClientLoginWindow" Height="320" Width="420">
+    <Grid>
+        <Label Content="Nazwa Użytkownika:" HorizontalAlignment="Left" Margin="26,98,0,0" VerticalAlignment="Top" Height="54" Width="141"/>
+        <Label Content="Hasło:" HorizontalAlignment="Left" Margin="26,184,0,0" VerticalAlignment="Top" Height="54" Width="141"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,98,0,0" TextWrapping="Wrap" Text="Nazwa użytkownika" VerticalAlignment="Top" Width="150" Height="38" Name="UserLoginBox" KeyDown="PasswordBox_KeyDown" />
+        <PasswordBox HorizontalAlignment="Left" Margin="172,184,0,0" VerticalAlignment="Top" Width="150" Height="40" Password="123" Name="ClientPasswordBox" KeyDown="PasswordBox_KeyDown"/>
+
+    </Grid>
+</Window>

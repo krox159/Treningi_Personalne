@@ -1,22 +1,22 @@
-﻿public class Klient
+﻿namespace TreningiPersonalne
 {
-    public int Id { get; }
-    public string NazwaUzytkownika { get; }
-    public string Imie { get; }
-    public string Nazwisko { get; }
-    public string Haslo { get; }
-
-    public Klient(int id, string nazwaUzytkownika, string imie, string nazwisko, string haslo)
+    public class Klient : Uzytkownik
     {
-        Id = id;
-        NazwaUzytkownika = nazwaUzytkownika;
-        Imie = imie;
-        Nazwisko = nazwisko;
-        Haslo = haslo;
-    }
+        public string NazwaUzytkownika { get; }
 
-    public override string ToString()
-    {
-        return $"{Id},{NazwaUzytkownika},{Imie},{Nazwisko},{Haslo}";
+
+        public Klient(int id, string nazwaUzytkownika, string imie, string nazwisko, string haslo)
+        {
+            Id = id;
+            NazwaUzytkownika = nazwaUzytkownika;
+            Imie = imie;
+            Nazwisko = nazwisko;
+            Haslo = haslo;
+        }
+
+        public override string ToString()
+        {
+            return $"{Id},{NazwaUzytkownika},{Imie},{Nazwisko},{Haslo}";
+        }
     }
 }
