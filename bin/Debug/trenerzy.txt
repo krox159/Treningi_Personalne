@@ -1,2 +1,2 @@
-1,Trener,Trenerski
-2,Trenerek,Trenerski
+1,Tomasz,Działowy
+2,Anna,Kuśmierz
