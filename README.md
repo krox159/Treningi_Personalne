@@ -10,7 +10,6 @@ Ta aplikacja to system do zarz¹dzania treningami personalnymi, który umo¿liwia r
 - Logowanie mened¿erów.
 - Dodawanie i usuwanie trenerów.
 - Dodawanie, przegl¹danie i usuwanie treningów.
-- Zarz¹dzanie warsztatami.
 
 ## Instalacja
 
@@ -37,7 +36,7 @@ G³ówne okno aplikacji, zawieraj¹ce przyciski do logowania mened¿erów, rejestracj
 
 #### BazaDanych.cs
 
-Klasa przechowuj¹ca listy klientów, trenerów, treningów oraz warsztatów. Zawiera metody do dodawania, usuwania i aktualizowania danych.
+Klasa przechowuj¹ca listy klientów, trenerów oraz treningów. Zawiera metody do dodawania, usuwania i aktualizowania danych.
 
 #### Globals.cs
 
@@ -74,7 +73,7 @@ Klasa reprezentuj¹ca trening, dziedzicz¹ca po klasie DataICzas. Zawiera dodatkow
 
 1. Kliknij przycisk "Logowanie mened¿era".
 2. WprowadŸ has³o mened¿era (domyœlne has³o to "123").
-3. Po zalogowaniu mened¿er mo¿e zarz¹dzaæ trenerami, przegl¹daæ i usuwaæ treningi oraz dodawaæ warsztaty.
+3. Po zalogowaniu mened¿er mo¿e zarz¹dzaæ trenerami, przegl¹daæ i usuwaæ treningi.
 
 ### Rejestracja klienta
 
