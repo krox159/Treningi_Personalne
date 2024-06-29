@@ -67,13 +67,5 @@ namespace TreningiPersonalne
             deletetrainingWindow.Show();
         }
 
-        private void AddWorkshop(object sender, RoutedEventArgs e)
-        {
-            string czastrwania = "01:00";
-            Warsztaty warsztat = new Warsztaty("Janusz Pudzianowski",DateTime.Now, TimeSpan.Parse(czastrwania) );
-            Globals.bazaDanych.Warsztaty.Add(warsztat);
-
-
-        }
     }
 }

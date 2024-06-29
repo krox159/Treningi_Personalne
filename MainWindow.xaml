@@ -10,7 +10,7 @@
         <Button Content="Logowanie Managera" HorizontalAlignment="Left" Margin="53,100,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ManagerLoginClick"/>
         <Button Content="Rejestracja Klienta" HorizontalAlignment="Left" Margin="53,182,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ClientRegistration" RenderTransformOrigin="0.517,-0.406"/>
         <Button Content="Logowanie Klienta" HorizontalAlignment="Left" Margin="53,265,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ClientLogin"/>
-        <Button Content="Wyjście" HorizontalAlignment="Left" Margin="53,373,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ExitButton"/>
+        <Button Content="Wyjście" HorizontalAlignment="Left" Margin="53,355,0,0" VerticalAlignment="Top" Height="35" Width="127" Click="ExitButton"/>
 
     </Grid>
 </Window>

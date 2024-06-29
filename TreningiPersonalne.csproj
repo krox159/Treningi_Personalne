@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="Trener.cs" />
     <Compile Include="Trening.cs" />
-    <Compile Include="Warsztaty.cs" />
     <Page Include="AddTrainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -14,7 +14,6 @@
         <Button Content="Wyświetl Listę Treningów" HorizontalAlignment="Left" Margin="52,229,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="ShowTrainings"/>
         <Button Content="Anuluj Trening" HorizontalAlignment="Left" Margin="52,290,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="DeleteTraining"/>
         <Button Content="Wyloguj" HorizontalAlignment="Left" Margin="52,351,0,0" VerticalAlignment="Top" Height="38" Width="138" RenderTransformOrigin="0.52,2.317" Click="ManagerLogout"/>
-        <Button Content="Dodaj Warsztaty" HorizontalAlignment="Left" Margin="597,45,0,0" VerticalAlignment="Top" Height="38" Width="138" Click="AddWorkshop"/>
-
+        
     </Grid>
 </Window>

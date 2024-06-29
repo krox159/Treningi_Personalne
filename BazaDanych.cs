@@ -12,7 +12,6 @@ namespace TreningiPersonalne
         public List<Trener> Trenerzy { get; } = new List<Trener>();
         public List<Trening> Treningi { get; } = new List<Trening>();
 
-        public List<Warsztaty> Warsztaty { get; } = new List<Warsztaty>();
 
         public void DodajKlienta(Klient klient)
         {
