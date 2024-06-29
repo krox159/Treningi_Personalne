@@ -67,11 +67,6 @@ Klasa reprezentuj¹ca trenera, dziedzicz¹ca po klasie Uzytkownik.
 
 Klasa reprezentuj¹ca trening, dziedzicz¹ca po klasie DataICzas. Zawiera dodatkowe w³aœciwoœci takie jak Id, KlientId, TrenerId, KlientImieNazwisko oraz TrenerImieNazwisko.
 
-### Warsztaty
-
-#### Warsztaty.cs
-
-Klasa reprezentuj¹ca warsztaty, dziedzicz¹ca po klasie DataICzas.
 
 ## U¿ywanie aplikacji
 
@@ -112,11 +107,6 @@ Klasa reprezentuj¹ca warsztaty, dziedzicz¹ca po klasie DataICzas.
 2. Kliknij przycisk "Poka¿ treningi" aby przegl¹daæ listê treningów.
 3. Kliknij przycisk "Usuñ trening" aby usun¹æ wybrany trening.
 
-### Dodawanie warsztatów
-
-1. Mened¿er musi byæ zalogowany.
-2. Kliknij przycisk "Dodaj warsztat".
-
 ## Uwagi
 
 - Upewnij siê, ¿e pliki `klienci.txt`, `trenerzy.txt` oraz `treningi.txt` znajduj¹ siê w tym samym katalogu co plik wykonywalny aplikacji.
@@ -124,4 +114,6 @@ Klasa reprezentuj¹ca warsztaty, dziedzicz¹ca po klasie DataICzas.
 
 ---
 
-Jeœli masz jakiekolwiek pytania lub problemy, prosimy o kontakt z autorem projektu.
+## Autorzy
+- Marta Maroñ
+- Wojciech Ca³ka
