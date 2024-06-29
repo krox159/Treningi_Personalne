@@ -1,81 +1,127 @@
-# System Treningów Personalnych
+# Treningi Personalne
 
 ## Opis
-Jest to aplikacja konsolowa napisana w jêzyku C# s³u¿¹ca do zarz¹dzania treningami personalnymi. Aplikacja pozwala mened¿erom dodawaæ i usuwaæ trenerów, przegl¹daæ listê trenerów oraz treningów, a tak¿e anulowaæ treningi. Klienci mog¹ rejestrowaæ siê, logowaæ, zapisywaæ siê na treningi, odwo³ywaæ je oraz przegl¹daæ swoje rezerwacje.
+
+Ta aplikacja to system do zarz¹dzania treningami personalnymi, który umo¿liwia rejestracjê i logowanie klientów, zarz¹dzanie trenerami oraz harmonogramowanie treningów. Zosta³a ona napisana w jêzyku C# i wykorzystuje WPF do interfejsu u¿ytkownika.
 
 ## Funkcje
-### Mened¿er
-- Logowanie- has³o: 123
-- Dodawanie trenera
-- Usuwanie trenera
-- Wyœwietlanie listy trenerów
-- Wyœwietlanie listy treningów
-- Anulowanie treningu
 
-### Klient
-- Rejestracja
-- Logowanie
-- Zapisywanie siê na trening
-- Odwo³ywanie treningu
-- Wyœwietlanie swoich rezerwacji
+- Rejestracja i logowanie klientów.
+- Logowanie mened¿erów.
+- Dodawanie i usuwanie trenerów.
+- Dodawanie, przegl¹danie i usuwanie treningów.
+- Zarz¹dzanie warsztatami.
+
+## Instalacja
+
+1. Sklonuj repozytorium lub pobierz pliki Ÿród³owe.
+2. Otwórz projekt w Visual Studio.
+3. Zbuduj projekt, wybieraj¹c opcjê `Build` > `Build Solution`.
+4. Uruchom aplikacjê, wybieraj¹c opcjê `Debug` > `Start Debugging`.
+
+## Pliki bazy danych
+
+Aplikacja korzysta z trzech plików tekstowych do przechowywania danych:
+
+- `klienci.txt` - zawiera dane klientów.
+- `trenerzy.txt` - zawiera dane trenerów.
+- `treningi.txt` - zawiera dane treningów.
 
 ## Struktura Projektu
-- Program.cs - g³ówny plik programu, zawiera logikê aplikacji.
-- BazaDanych.cs - klasa zarz¹dzaj¹ca przechowywaniem danych o klientach, trenerach i treningach.
-- Klient.cs - klasa reprezentuj¹ca klienta.
-- Trener.cs - klasa reprezentuj¹ca trenera.
-- Trening.cs - klasa reprezentuj¹ca trening.
 
-## Pliki Danych
-- klienci.txt - plik przechowuj¹cy dane klientów.
-- trenerzy.txt - plik przechowuj¹cy dane trenerów.
-- treningi.txt - plik przechowuj¹cy dane treningów.
+### G³ówne klasy
 
-## Instrukcje U¿ytkowania
-### Uruchomienie
-1. Skompiluj program oraz uruchom aplikacjê.
+#### MainWindow.xaml.cs
 
-### Logowanie jako Mened¿er
-1. Wybierz opcjê "Logowanie jako mened¿er".
-2. WprowadŸ has³o.
+G³ówne okno aplikacji, zawieraj¹ce przyciski do logowania mened¿erów, rejestracji klientów, logowania klientów oraz zamykania aplikacji.
 
-### Dodawanie Trenera
-1. Po zalogowaniu jako mened¿er wybierz opcjê "Dodaj trenera".
-2. Podaj imiê i nazwisko trenera.
+#### BazaDanych.cs
 
-### Usuwanie Trenera
-1. Po zalogowaniu jako mened¿er wybierz opcjê "Usuñ trenera".
-2. Podaj ID trenera do usuniêcia.
+Klasa przechowuj¹ca listy klientów, trenerów, treningów oraz warsztatów. Zawiera metody do dodawania, usuwania i aktualizowania danych.
 
-### Wyœwietlanie Listy Trenerów
-1. Po zalogowaniu jako mened¿er wybierz opcjê "Wyœwietl listê trenerów".
+#### Globals.cs
 
-### Wyœwietlanie Listy Treningów
-1. Po zalogowaniu jako mened¿er wybierz opcjê "Wyœwietl listê treningów".
+Klasa statyczna zawieraj¹ca globalne zmienne i metody do operacji na bazie danych, takie jak wczytywanie danych z plików oraz aktualizowanie plików po zmianach.
 
-### Anulowanie Treningu
-1. Po zalogowaniu jako mened¿er wybierz opcjê "Anuluj trening".
-2. Podaj ID treningu do anulowania.
+#### Uzytkownik.cs
 
-### Rejestracja Klienta
-1. Wybierz opcjê "Rejestracja klienta".
-2. Podaj unikaln¹ nazwê u¿ytkownika, imiê, nazwisko i has³o.
+Klasa bazowa dla Klientów i Trenerów, zawieraj¹ca wspólne w³aœciwoœci takie jak Id, Imiê, Nazwisko i Has³o.
 
-### Logowanie jako Klient
-1. Wybierz opcjê "Logowanie jako klient".
-2. Podaj nazwê u¿ytkownika i has³o.
+### Klient i Mened¿er
 
-### Zapisywanie siê na Trening
-1. Po zalogowaniu jako klient wybierz opcjê "Zapisz siê na trening".
-2. Podaj ID trenera, datê, godzinê i czas trwania treningu.
+#### Klient.cs
 
-### Odwo³ywanie Treningu
-1. Po zalogowaniu jako klient wybierz opcjê "Odwo³aj trening".
-2. Podaj ID treningu do odwo³ania.
+Klasa reprezentuj¹ca klienta, dziedzicz¹ca po klasie Uzytkownik.
 
-### Wyœwietlanie Rezerwacji
-1. Po zalogowaniu jako klient wybierz opcjê "Wyœwietl swoje rezerwacje".
+#### Manager.cs
 
-## Autorzy
-- Wojciech Ca³ka
-- Marta Maroñ
+Klasa reprezentuj¹ca mened¿era, dziedzicz¹ca po klasie Uzytkownik.
+
+### Trener i Trening
+
+#### Trener.cs
+
+Klasa reprezentuj¹ca trenera, dziedzicz¹ca po klasie Uzytkownik.
+
+#### Trening.cs
+
+Klasa reprezentuj¹ca trening, dziedzicz¹ca po klasie DataICzas. Zawiera dodatkowe w³aœciwoœci takie jak Id, KlientId, TrenerId, KlientImieNazwisko oraz TrenerImieNazwisko.
+
+### Warsztaty
+
+#### Warsztaty.cs
+
+Klasa reprezentuj¹ca warsztaty, dziedzicz¹ca po klasie DataICzas.
+
+## U¿ywanie aplikacji
+
+### Logowanie mened¿era
+
+1. Kliknij przycisk "Logowanie mened¿era".
+2. WprowadŸ has³o mened¿era (domyœlne has³o to "123").
+3. Po zalogowaniu mened¿er mo¿e zarz¹dzaæ trenerami, przegl¹daæ i usuwaæ treningi oraz dodawaæ warsztaty.
+
+### Rejestracja klienta
+
+1. Kliknij przycisk "Rejestracja klienta".
+2. WprowadŸ wymagane dane: Nazwa u¿ytkownika, Imiê, Nazwisko, Has³o.
+3. Po naciœniêciu klawisza Enter klient zostanie zarejestrowany.
+
+### Logowanie klienta
+
+1. Kliknij przycisk "Logowanie klienta".
+2. WprowadŸ nazwê u¿ytkownika oraz has³o.
+3. Po zalogowaniu klient mo¿e przegl¹daæ, rejestrowaæ oraz usuwaæ swoje treningi.
+
+### Dodawanie trenera
+
+1. Mened¿er musi byæ zalogowany.
+2. Kliknij przycisk "Dodaj trenera".
+3. WprowadŸ imiê i nazwisko trenera.
+4. Po naciœniêciu klawisza Enter trener zostanie dodany.
+
+### Przegl¹danie i usuwanie trenerów
+
+1. Mened¿er musi byæ zalogowany.
+2. Kliknij przycisk "Poka¿ trenerów" aby przegl¹daæ listê trenerów.
+3. Kliknij przycisk "Usuñ trenera" aby usun¹æ wybranego trenera.
+
+### Przegl¹danie i usuwanie treningów
+
+1. Mened¿er musi byæ zalogowany lub klient musi byæ zalogowany.
+2. Kliknij przycisk "Poka¿ treningi" aby przegl¹daæ listê treningów.
+3. Kliknij przycisk "Usuñ trening" aby usun¹æ wybrany trening.
+
+### Dodawanie warsztatów
+
+1. Mened¿er musi byæ zalogowany.
+2. Kliknij przycisk "Dodaj warsztat".
+
+## Uwagi
+
+- Upewnij siê, ¿e pliki `klienci.txt`, `trenerzy.txt` oraz `treningi.txt` znajduj¹ siê w tym samym katalogu co plik wykonywalny aplikacji.
+- Domyœlne has³o mened¿era to "123". Mo¿na je zmieniæ w kodzie Ÿród³owym klasy Manager.
+
+---
+
+Jeœli masz jakiekolwiek pytania lub problemy, prosimy o kontakt z autorem projektu.
