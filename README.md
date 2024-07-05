@@ -2,134 +2,136 @@
 
 ## Opis
 
-Ta aplikacja to system do zarz¹dzania treningami personalnymi, który umo¿liwia rejestracjê i logowanie klientów, zarz¹dzanie trenerami oraz harmonogramowanie treningów. Zosta³a ona napisana w jêzyku C# i wykorzystuje WPF do interfejsu u¿ytkownika.
+Ta aplikacja to system do zarzÄ…dzania treningami personalnymi, ktÃ³ry umoÅ¼liwia rejestracjÄ™ i logowanie klientÃ³w, zarzÄ…dzanie trenerami oraz harmonogramowanie treningÃ³w. ZostaÅ‚a ona napisana w jÄ™zyku C# i wykorzystuje WPF do interfejsu uÅ¼ytkownika.
 
 ## Funkcje
 
-- Rejestracja i logowanie klientów.
-- Logowanie mened¿erów.
-- Dodawanie i usuwanie trenerów.
-- Dodawanie, przegl¹danie i usuwanie treningów.
+- Rejestracja i logowanie klientÃ³w.
+- Logowanie menedÅ¼erÃ³w.
+- Dodawanie i usuwanie trenerÃ³w.
+- Dodawanie, przeglÄ…danie i usuwanie treningÃ³w.
 
 ## Instalacja
 
-1. Sklonuj repozytorium lub pobierz pliki Ÿród³owe.
-2. Otwórz projekt w Visual Studio.
-3. Zbuduj projekt, wybieraj¹c opcjê `Build` > `Build Solution`.
-4. Uruchom aplikacjê, wybieraj¹c opcjê `Debug` > `Start Debugging`.
+1. Sklonuj repozytorium lub pobierz pliki ÅºrÃ³dÅ‚owe.
+2. OtwÃ³rz projekt w Visual Studio.
+3. Zbuduj projekt, wybierajÄ…c opcjÄ™ `Build` > `Build Solution`.
+4. Uruchom aplikacjÄ™, wybierajÄ…c opcjÄ™ `Debug` > `Start Debugging`.
 
 ## Pliki bazy danych
 
-Aplikacja korzysta z trzech plików tekstowych do przechowywania danych:
+Aplikacja korzysta z trzech plikÃ³w tekstowych do przechowywania danych:
 
-- `klienci.txt` - zawiera dane klientów.
-- `trenerzy.txt` - zawiera dane trenerów.
-- `treningi.txt` - zawiera dane treningów.
+- `klienci.txt` - zawiera dane klientÃ³w.
+- `trenerzy.txt` - zawiera dane trenerÃ³w.
+- `treningi.txt` - zawiera dane treningÃ³w.
 
 ## Struktura Projektu
 
-### G³ówne klasy
+### GÅ‚Ã³wne klasy
 
 #### MainWindow.xaml.cs
 
-G³ówne okno aplikacji, zawieraj¹ce przyciski do logowania mened¿erów, rejestracji klientów, logowania klientów oraz zamykania aplikacji.
+GÅ‚Ã³wne okno aplikacji, zawierajÄ…ce przyciski do logowania menedÅ¼erÃ³w, rejestracji klientÃ³w, logowania klientÃ³w oraz zamykania aplikacji.
+
+![Zrzut ekranu 2024-07-05 185053](https://github.com/krox159/Treningi_Personalne/assets/148622295/4102b03d-92be-4a37-8ff7-689f83c0d2a9)
 
 #### BazaDanych.cs
 
-Klasa przechowuj¹ca listy klientów, trenerów oraz treningów. Zawiera metody do dodawania, usuwania i aktualizowania danych. Pola dla hermetycznych klientów i trenerów.
+Klasa przechowujÄ…ca listy klientÃ³w, trenerÃ³w oraz treningÃ³w. Zawiera metody do dodawania, usuwania i aktualizowania danych. Pola dla hermetycznych klientÃ³w i trenerÃ³w.
 
 #### Globals.cs
 
-Klasa statyczna zawieraj¹ca globalne zmienne i metody do operacji na bazie danych, takie jak wczytywanie danych z plików oraz aktualizowanie plików po zmianach.
+Klasa statyczna zawierajÄ…ca globalne zmienne i metody do operacji na bazie danych, takie jak wczytywanie danych z plikÃ³w oraz aktualizowanie plikÃ³w po zmianach.
 
 #### Uzytkownik.cs
 
-Klasa bazowa dla Klientów i Trenerów, zawieraj¹ca wspólne w³aœciwoœci takie jak Id, Imiê, Nazwisko i Has³o.
+Klasa bazowa dla KlientÃ³w i TrenerÃ³w, zawierajÄ…ca wspÃ³lne wÅ‚aÅ›ciwoÅ›ci takie jak Id, ImiÄ™, Nazwisko i HasÅ‚o.
 
-### Klient i Mened¿er
+### Klient i MenedÅ¼er
 
 #### Klient.cs
 
-Klasa reprezentuj¹ca klienta, dziedzicz¹ca po klasie Uzytkownik.
+Klasa reprezentujÄ…ca klienta, dziedziczÄ…ca po klasie Uzytkownik.
 
 #### Manager.cs
 
-Klasa reprezentuj¹ca mened¿era, dziedzicz¹ca po klasie Uzytkownik.
+Klasa reprezentujÄ…ca menedÅ¼era, dziedziczÄ…ca po klasie Uzytkownik.
 
 ### Trener i Trening
 
 #### Trener.cs
 
-Klasa reprezentuj¹ca trenera, dziedzicz¹ca po klasie Uzytkownik.
+Klasa reprezentujÄ…ca trenera, dziedziczÄ…ca po klasie Uzytkownik.
 
 #### Trening.cs
 
-Klasa reprezentuj¹ca trening, dziedzicz¹ca po klasie DataICzas. Zawiera dodatkowe w³aœciwoœci takie jak Id, KlientId, TrenerId, KlientImieNazwisko oraz TrenerImieNazwisko.
+Klasa reprezentujÄ…ca trening, dziedziczÄ…ca po klasie DataICzas. Zawiera dodatkowe wÅ‚aÅ›ciwoÅ›ci takie jak Id, KlientId, TrenerId, KlientImieNazwisko oraz TrenerImieNazwisko.
 
 #### TrenerPoliHerm.cs
 
-Hermetyzacja pól trenera.
+Hermetyzacja pÃ³l trenera.
 
 ####  UzytkownikPoliHerm.cs
 
-Hermetyzacja pól u¿ytkownika.
+Hermetyzacja pÃ³l uÅ¼ytkownika.
 
 ####  KlientPoliHerm.cs
 
-Hermetyzacja pól klienta.
+Hermetyzacja pÃ³l klienta.
 
 ####  ShowTrainings.xaml.cs
 
-Polimorfizm. Poka¿ treningi - dla klienta tylko jego, dla managera wszystkie.
+Polimorfizm. PokaÅ¼ treningi - dla klienta tylko jego, dla managera wszystkie.
 
 
 
-## U¿ywanie aplikacji
+## UÅ¼ywanie aplikacji
 
-### Logowanie mened¿era
+### Logowanie menedÅ¼era
 
-1. Kliknij przycisk "Logowanie mened¿era".
-2. WprowadŸ has³o mened¿era (domyœlne has³o to "123").
-3. Po zalogowaniu mened¿er mo¿e zarz¹dzaæ trenerami, przegl¹daæ i usuwaæ treningi.
+1. Kliknij przycisk "Logowanie menedÅ¼era".
+2. WprowadÅº hasÅ‚o menedÅ¼era (domyÅ›lne hasÅ‚o to "123").
+3. Po zalogowaniu menedÅ¼er moÅ¼e zarzÄ…dzaÄ‡ trenerami, przeglÄ…daÄ‡ i usuwaÄ‡ treningi.
 
 ### Rejestracja klienta
 
 1. Kliknij przycisk "Rejestracja klienta".
-2. WprowadŸ wymagane dane: Nazwa u¿ytkownika, Imiê, Nazwisko, Has³o.
-3. Po naciœniêciu klawisza Enter klient zostanie zarejestrowany.
+2. WprowadÅº wymagane dane: Nazwa uÅ¼ytkownika, ImiÄ™, Nazwisko, HasÅ‚o.
+3. Po naciÅ›niÄ™ciu klawisza Enter klient zostanie zarejestrowany.
 
 ### Logowanie klienta
 
 1. Kliknij przycisk "Logowanie klienta".
-2. WprowadŸ nazwê u¿ytkownika oraz has³o.
-3. Po zalogowaniu klient mo¿e przegl¹daæ, rejestrowaæ oraz usuwaæ swoje treningi.
+2. WprowadÅº nazwÄ™ uÅ¼ytkownika oraz hasÅ‚o.
+3. Po zalogowaniu klient moÅ¼e przeglÄ…daÄ‡, rejestrowaÄ‡ oraz usuwaÄ‡ swoje treningi.
 
 ### Dodawanie trenera
 
-1. Mened¿er musi byæ zalogowany.
+1. MenedÅ¼er musi byÄ‡ zalogowany.
 2. Kliknij przycisk "Dodaj trenera".
-3. WprowadŸ imiê i nazwisko trenera.
-4. Po naciœniêciu klawisza Enter trener zostanie dodany.
+3. WprowadÅº imiÄ™ i nazwisko trenera.
+4. Po naciÅ›niÄ™ciu klawisza Enter trener zostanie dodany.
 
-### Przegl¹danie i usuwanie trenerów
+### PrzeglÄ…danie i usuwanie trenerÃ³w
 
-1. Mened¿er musi byæ zalogowany.
-2. Kliknij przycisk "Poka¿ trenerów" aby przegl¹daæ listê trenerów.
-3. Kliknij przycisk "Usuñ trenera" aby usun¹æ wybranego trenera.
+1. MenedÅ¼er musi byÄ‡ zalogowany.
+2. Kliknij przycisk "PokaÅ¼ trenerÃ³w" aby przeglÄ…daÄ‡ listÄ™ trenerÃ³w.
+3. Kliknij przycisk "UsuÅ„ trenera" aby usunÄ…Ä‡ wybranego trenera.
 
-### Przegl¹danie i usuwanie treningów
+### PrzeglÄ…danie i usuwanie treningÃ³w
 
-1. Mened¿er musi byæ zalogowany lub klient musi byæ zalogowany.
-2. Kliknij przycisk "Poka¿ treningi" aby przegl¹daæ listê treningów.
-3. Kliknij przycisk "Usuñ trening" aby usun¹æ wybrany trening.
+1. MenedÅ¼er musi byÄ‡ zalogowany lub klient musi byÄ‡ zalogowany.
+2. Kliknij przycisk "PokaÅ¼ treningi" aby przeglÄ…daÄ‡ listÄ™ treningÃ³w.
+3. Kliknij przycisk "UsuÅ„ trening" aby usunÄ…Ä‡ wybrany trening.
 
 ## Uwagi
 
-- Upewnij siê, ¿e pliki `klienci.txt`, `trenerzy.txt` oraz `treningi.txt` znajduj¹ siê w tym samym katalogu co plik wykonywalny aplikacji.
-- Domyœlne has³o mened¿era to "123". Mo¿na je zmieniæ w kodzie Ÿród³owym klasy Manager.
+- Upewnij siÄ™, Å¼e pliki `klienci.txt`, `trenerzy.txt` oraz `treningi.txt` znajdujÄ… siÄ™ w tym samym katalogu co plik wykonywalny aplikacji.
+- DomyÅ›lne hasÅ‚o menedÅ¼era to "123". MoÅ¼na je zmieniÄ‡ w kodzie ÅºrÃ³dÅ‚owym klasy Manager.
 
 ---
 
 ## Autorzy
-- Marta Maroñ
-- Wojciech Ca³ka
+- Marta MaroÅ„
+- Wojciech CaÅ‚ka
