@@ -112,8 +112,14 @@ Polimorfizm. Pokaż treningi - dla klienta tylko jego, dla managera wszystkie.
 ### Logowanie klienta
 
 1. Kliknij przycisk "Logowanie klienta".
+
+![Zrzut ekranu 2024-07-05 185940](https://github.com/krox159/Treningi_Personalne/assets/148622295/d010320e-6efb-497f-b2cb-6db62fd051c4)
+   
 2. Wprowadź nazwę użytkownika oraz hasło.
 3. Po zalogowaniu klient może przeglądać, rejestrować oraz usuwać swoje treningi.
+
+![Zrzut ekranu 2024-07-05 190051](https://github.com/krox159/Treningi_Personalne/assets/148622295/81b33294-d19f-4dcf-b22e-e869fbfb670b)
+
 
 ### Dodawanie trenera
 
@@ -122,17 +128,31 @@ Polimorfizm. Pokaż treningi - dla klienta tylko jego, dla managera wszystkie.
 3. Wprowadź imię i nazwisko trenera.
 4. Po naciśnięciu klawisza Enter trener zostanie dodany.
 
+![Zrzut ekranu 2024-07-05 190254](https://github.com/krox159/Treningi_Personalne/assets/148622295/2dbc43f3-bd56-4161-b1d6-2b1db5cf47ee)
+
+
 ### Przeglądanie i usuwanie trenerów
 
 1. Menedżer musi być zalogowany.
-2. Kliknij przycisk "Pokaż trenerów" aby przeglądać listę trenerów.
+2. Kliknij przycisk "Wyświetl listę trenerów" aby przeglądać listę trenerów.
+
+![Zrzut ekranu 2024-07-05 190613](https://github.com/krox159/Treningi_Personalne/assets/148622295/a410194e-6a22-4f49-86db-e08b11e2d48a)
+  
 3. Kliknij przycisk "Usuń trenera" aby usunąć wybranego trenera.
+
+![Zrzut ekranu 2024-07-05 190626](https://github.com/krox159/Treningi_Personalne/assets/148622295/6334f4e5-0211-4934-9d76-9c775a4393f6)
 
 ### Przeglądanie i usuwanie treningów
 
 1. Menedżer musi być zalogowany lub klient musi być zalogowany.
-2. Kliknij przycisk "Pokaż treningi" aby przeglądać listę treningów.
-3. Kliknij przycisk "Usuń trening" aby usunąć wybrany trening.
+2. Kliknij przycisk "Wyświetl listę treningów" aby przeglądać listę treningów.
+
+![Zrzut ekranu 2024-07-05 190856](https://github.com/krox159/Treningi_Personalne/assets/148622295/76aae6a5-23e7-4731-a218-59d78790401f)
+   
+3. Kliknij przycisk "Anuluj trening" aby usunąć wybrany trening.
+
+![Zrzut ekranu 2024-07-05 190915](https://github.com/krox159/Treningi_Personalne/assets/148622295/752e1bec-7a00-4af8-9900-c163529296d6)
+
 
 ## Uwagi
 
