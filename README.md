@@ -91,8 +91,11 @@ Polimorfizm. Pokaż treningi - dla klienta tylko jego, dla managera wszystkie.
 ### Logowanie menedżera
 
 1. Kliknij przycisk "Logowanie menedżera".
-2. Wprowadź hasło menedżera (domyślne hasło to "123").
-3. Po zalogowaniu menedżer może zarządzać trenerami, przeglądać i usuwać treningi.
+
+![Zrzut ekranu 2024-07-05 185434](https://github.com/krox159/Treningi_Personalne/assets/148622295/5501fc07-f059-4682-86a6-417c585a1338)
+  
+3. Wprowadź hasło menedżera (domyślne hasło to "123").
+4. Po zalogowaniu menedżer może zarządzać trenerami, przeglądać i usuwać treningi.
 
 ### Rejestracja klienta
 
