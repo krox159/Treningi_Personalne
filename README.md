@@ -106,6 +106,9 @@ Polimorfizm. Pokaż treningi - dla klienta tylko jego, dla managera wszystkie.
 2. Wprowadź wymagane dane: Nazwa użytkownika, Imię, Nazwisko, Hasło.
 3. Po naciśnięciu klawisza Enter klient zostanie zarejestrowany.
 
+![Zrzut ekranu 2024-07-05 185824](https://github.com/krox159/Treningi_Personalne/assets/148622295/1f07007b-46fc-4cd2-abd5-581b4106a316)
+
+
 ### Logowanie klienta
 
 1. Kliknij przycisk "Logowanie klienta".
