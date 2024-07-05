@@ -36,7 +36,7 @@ G³ówne okno aplikacji, zawieraj¹ce przyciski do logowania mened¿erów, rejestracj
 
 #### BazaDanych.cs
 
-Klasa przechowuj¹ca listy klientów, trenerów oraz treningów. Zawiera metody do dodawania, usuwania i aktualizowania danych.
+Klasa przechowuj¹ca listy klientów, trenerów oraz treningów. Zawiera metody do dodawania, usuwania i aktualizowania danych. Pola dla hermetycznych klientów i trenerów.
 
 #### Globals.cs
 
@@ -65,6 +65,23 @@ Klasa reprezentuj¹ca trenera, dziedzicz¹ca po klasie Uzytkownik.
 #### Trening.cs
 
 Klasa reprezentuj¹ca trening, dziedzicz¹ca po klasie DataICzas. Zawiera dodatkowe w³aœciwoœci takie jak Id, KlientId, TrenerId, KlientImieNazwisko oraz TrenerImieNazwisko.
+
+#### TrenerPoliHerm.cs
+
+Hermetyzacja pól trenera.
+
+####  UzytkownikPoliHerm.cs
+
+Hermetyzacja pól u¿ytkownika.
+
+####  KlientPoliHerm.cs
+
+Hermetyzacja pól klienta.
+
+####  ShowTrainings.xaml.cs
+
+Polimorfizm. Poka¿ treningi - dla klienta tylko jego, dla managera wszystkie.
+
 
 
 ## U¿ywanie aplikacji
