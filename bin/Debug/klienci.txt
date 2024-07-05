@@ -1,2 +1,6 @@
 1,Michalek123,Michalek,Michalski,123
 2,Martens,Marta,Martowska,1234
+2,michalek,Michal,Mar,123
+3,Mart,Marta,Martensik,123
+5,Wojt,Wojtas,Wojtowski,12
+8,Wojtasek,Wojtek,Krotkohaslowy,domyslnehaslo

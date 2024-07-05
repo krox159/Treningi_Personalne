@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\Wojtek\Desktop\INF\git\Treningi_Personalne\obj\Debug\
+C:\Users\Mike\Downloads\Treningi_Personalne-master\obj\Debug\
 TreningiPersonalne
 none
 false
 DEBUG;TRACE
-C:\Users\Wojtek\Desktop\INF\git\Treningi_Personalne\App.xaml
+C:\Users\Mike\Downloads\Treningi_Personalne-master\App.xaml
 121102083752
 
-25-1534320806
+28-1787642496
 13-38814620
 AddTrainer.xaml;ClientLoginWindow.xaml;ClientMenu.xaml;ClientRegistrationForm.xaml;DeleteTrainer.xaml;DeleteTraining.xaml;MainWindow.xaml;ManagerLoginWindow.xaml;ManagerMenu.xaml;RegisterTraining.xaml;ShowTrainers.xaml;ShowTrainings.xaml;
 

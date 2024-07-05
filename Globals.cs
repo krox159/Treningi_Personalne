@@ -9,14 +9,18 @@ namespace TreningiPersonalne
 {
     public static class Globals
     {
-        public static BazaDanych bazaDanych;
+        public static BazaDanych  bazaDanych;
         public static int klientIdCounter = 0;
         public static int trenerIdCounter = 0;
         public static int treningIdCounter = 0;
 
+
+
+
         //Operacje DB
         public static void WczytajBazeDanychKlientow()
         {
+
             using (StreamReader readtext = new StreamReader("klienci.txt"))
             {
                 string readText = readtext.ReadToEnd();

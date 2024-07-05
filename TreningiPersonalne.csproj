@@ -66,6 +66,8 @@
       <DependentUpon>DeleteTraining.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="KlientPoliHerm.cs" />
+    <Compile Include="TrenerPoliHerm.cs" />
     <Compile Include="Uzytkownik.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="RegisterTraining.xaml.cs">
@@ -79,6 +81,7 @@
     </Compile>
     <Compile Include="Trener.cs" />
     <Compile Include="Trening.cs" />
+    <Compile Include="UzytkownikPoliHerm.cs" />
     <Page Include="AddTrainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

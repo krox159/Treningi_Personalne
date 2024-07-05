@@ -1,0 +1,188 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\showtrainers.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:showtrainers.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\bazadanych.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:bazadanych.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\clientregistrationform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:clientregistrationform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\klientpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:klientpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\uzytkownikpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:uzytkownikpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\trenerpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:trenerpoliherm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\clientregistrationform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:clientregistrationform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|c:\\users\\mike\\downloads\\treningi_personalne-master\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200529EF-F9C3-43BE-A918-77B67C7422C8}|TreningiPersonalne.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShowTrainers.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ShowTrainers.xaml.cs",
+              "RelativeDocumentMoniker": "ShowTrainers.xaml.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ShowTrainers.xaml.cs",
+              "RelativeToolTip": "ShowTrainers.xaml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T22:12:48.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Globals.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\Globals.cs",
+              "RelativeDocumentMoniker": "Globals.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\Globals.cs",
+              "RelativeToolTip": "Globals.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T21:47:36.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BazaDanych.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\BazaDanych.cs",
+              "RelativeDocumentMoniker": "BazaDanych.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\BazaDanych.cs",
+              "RelativeToolTip": "BazaDanych.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAwEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T21:30:18.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-04T21:24:36.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientRegistrationForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ClientRegistrationForm.xaml.cs",
+              "RelativeDocumentMoniker": "ClientRegistrationForm.xaml.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ClientRegistrationForm.xaml.cs",
+              "RelativeToolTip": "ClientRegistrationForm.xaml.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAQwFMAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T21:21:06.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientRegistrationForm.xaml",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ClientRegistrationForm.xaml",
+              "RelativeDocumentMoniker": "ClientRegistrationForm.xaml",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\ClientRegistrationForm.xaml",
+              "RelativeToolTip": "ClientRegistrationForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-04T21:21:09.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwDAAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T21:11:15.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KlientPoliHerm.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\KlientPoliHerm.cs",
+              "RelativeDocumentMoniker": "KlientPoliHerm.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\KlientPoliHerm.cs",
+              "RelativeToolTip": "KlientPoliHerm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T21:09:00.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UzytkownikPoliHerm.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\UzytkownikPoliHerm.cs",
+              "RelativeDocumentMoniker": "UzytkownikPoliHerm.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\UzytkownikPoliHerm.cs",
+              "RelativeToolTip": "UzytkownikPoliHerm.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAswD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T20:57:13.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrenerPoliHerm.cs",
+              "DocumentMoniker": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\TrenerPoliHerm.cs",
+              "RelativeDocumentMoniker": "TrenerPoliHerm.cs",
+              "ToolTip": "C:\\Users\\Mike\\Downloads\\Treningi_Personalne-master\\TrenerPoliHerm.cs",
+              "RelativeToolTip": "TrenerPoliHerm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T20:56:38.531Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

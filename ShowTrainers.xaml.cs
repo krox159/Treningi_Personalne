@@ -20,13 +20,22 @@ namespace TreningiPersonalne
     public partial class ShowTrainers : Window
     {
         List<Trener> trainersList = new List<Trener>();
+        List<TrenerPoliHerm> trainersListHerm = new List<TrenerPoliHerm>();
         public ShowTrainers()
         {
             trainersList = Globals.bazaDanych.Trenerzy;
+            //herm
+            trainersListHerm = Globals.bazaDanych.PobierzTrenerow();
+
+
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             TrainersDataGrid.ItemsSource = null;
             TrainersDataGrid.ItemsSource = trainersList;
+
+            //herm
+            //TrainersDataGrid.ItemsSource = null;
+            //TrainersDataGrid.ItemsSource = trainersListHerm;
         }
     }
 }

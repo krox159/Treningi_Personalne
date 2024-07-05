@@ -44,6 +44,7 @@ namespace TreningiPersonalne
 
                 Globals.klientIdCounter++;
                 var klient = new Klient(Globals.klientIdCounter, nazwaUzytkownika, imie, nazwisko, haslo);
+
                 Globals.bazaDanych.DodajKlienta(klient);
                 using (StreamWriter writetext = File.AppendText("klienci.txt"))
                 {
@@ -56,5 +57,38 @@ namespace TreningiPersonalne
 
             }
         }
+
+        private void UserPassword_KeyDown_Herm(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var nazwaUzytkownika = UserLogin.Text;
+                if (Globals.bazaDanych.Klienci.Exists(k => k.NazwaUzytkownika == nazwaUzytkownika))
+                {
+                    //Console.WriteLine("Nazwa użytkownika już istnieje. Spróbuj ponownie.");
+                    return;
+                }
+
+                var imie = UserName.Text;
+                var nazwisko = UserSurname.Text;
+                var haslo = UserPassword.Password;
+
+                Globals.klientIdCounter++;
+                var klientHerm = new KlientPoliHerm(Globals.klientIdCounter, nazwaUzytkownika, imie, nazwisko, haslo);
+
+                Globals.bazaDanych.DodajKlienta(klientHerm);
+                using (StreamWriter writetext = File.AppendText("klienci.txt"))
+                {
+                    writetext.WriteLine(klientHerm);
+                    
+                }
+
+                e.Handled = true;
+                this.Close();
+
+
+            }
+        }
+
     }
 }
